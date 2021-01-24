@@ -5,12 +5,10 @@ const createAppWindow = require('./main/app-process');
 const authService = require('./services/auth-service');
 
 async function showWindow() {
-  try {
-    await authService.refreshTokens();
-    return createAppWindow();
-  } catch (err) {
+  if (authService.getProfile() === null) {
     createAuthWindow();
   }
+  return createAppWindow();
 }
 
 // This method will be called when Electron has finished
