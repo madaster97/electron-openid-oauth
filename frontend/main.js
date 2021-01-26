@@ -7,8 +7,9 @@ const authService = require('./services/auth-service');
 async function showWindow() {
   if (authService.getProfile() === null) {
     createAuthWindow();
+  } else {
+    createAppWindow();
   }
-  return createAppWindow();
 }
 
 // This method will be called when Electron has finished

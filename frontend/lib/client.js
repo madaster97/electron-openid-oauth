@@ -1,5 +1,5 @@
-// const envVariables = require('../env-variables');
-const envVariables = require('../test');
+const envVariables = require('../env-variables');
+// const envVariables = require('../test');
 const { Issuer } = require('openid-client');
 
 const {clientId} = envVariables;
